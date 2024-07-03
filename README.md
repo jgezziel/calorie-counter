@@ -15,6 +15,8 @@ Este proyecto permite lo siguiente:
 
 \*Existen algunas ventanas de aviso y/o confirmación con información extra.
 
+URL del proyecto desplegado: [Visitar el contador de calorías](https://calorie-counter-jgezziel.pages.dev/)
+
 ## Información tecnica
 
 Las tecnologias y herramientas usadas en el proyecto son las siguientes:
