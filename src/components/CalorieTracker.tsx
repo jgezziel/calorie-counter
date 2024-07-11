@@ -34,14 +34,14 @@ const CalorieTracker = ({ activities }: CalorieTrackerProps) => {
 
   return (
     <>
-      <h3 className="text-3xl font-bold text-zinc-300 text-center mb-6">
+      <h3 className="mb-6 text-3xl font-bold text-center text-zinc-300">
         Resumen de calorias
       </h3>
       <div className="flex flex-col sm:flex-row sm:items-center gap-y-6 sm:justify-between">
         <CalorieDisplay calories={caloriesConsumed} category="Alimento" />
         <CalorieDisplay calories={caloriesBurned} category="Ejercicio" />
         <div className="block">
-          <div className="border-2 px-4 pt-4 pb-3 rounded border-zinc-700 bg-zinc-800 w-fit mx-auto">
+          <div className="px-4 pt-4 pb-3 mx-auto border-2 rounded border-zinc-700 bg-zinc-800 w-fit">
             <CalorieDisplay calories={caloriesNet} category="Diferencia" />
           </div>
         </div>

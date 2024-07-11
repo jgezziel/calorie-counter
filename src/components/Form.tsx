@@ -35,7 +35,7 @@ const Form = ({ dispatch, state }: FormProps) => {
       )[0];
       setActivity(activity);
     }
-  }, [state.activityID, state.activities]);
+  }, [state.activityID]);
 
   const handleChange = (
     e: ChangeEvent<HTMLSelectElement> | ChangeEvent<HTMLInputElement>

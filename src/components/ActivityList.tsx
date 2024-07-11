@@ -23,14 +23,20 @@ const ActivityList = ({ activities, dispatch }: ActivityListProps) => {
     [activities]
   );
 
-  const handleEditDelete = (id: Activity["id"], action: "edit" | "delete") => {
-    const typeAction =
-      action === "edit" ? "SET_ACTIVITY_ID" : "DELETE_ACTIVITY";
-
+  const handleEdit = (id: Activity["id"]) => {
     dispatch({
-      type: typeAction,
+      type: "SET_ACTIVITY_ID",
       payload: { id },
     });
+  };
+
+  const handleDelete = (id: Activity["id"]) => {
+    if (window.confirm("¿Estás seguro de eliminar esta actividad?")) {
+      dispatch({
+        type: "DELETE_ACTIVITY",
+        payload: { id },
+      });
+    }
   };
 
   return (
@@ -68,7 +74,7 @@ const ActivityList = ({ activities, dispatch }: ActivityListProps) => {
                       type="button"
                       className="px-3 py-2 transition-all rounded text-sky-500 ring-2 ring-sky-500 hover:bg-sky-500 hover:text-white focus:ring-offset-2 focus:ring-offset-white focus:ring-sky-500 hover:scale-95"
                       title="Editar actividad"
-                      onClick={() => handleEditDelete(activity.id, "edit")}
+                      onClick={() => handleEdit(activity.id)}
                     >
                       <PencilIcon className="size-6" />
                     </button>
@@ -76,7 +82,7 @@ const ActivityList = ({ activities, dispatch }: ActivityListProps) => {
                       type="button"
                       className="px-3 py-2 text-red-500 transition-all rounded ring-2 ring-red-500 hover:bg-red-500 hover:text-white focus:ring-offset-2 focus:ring-offset-white focus:ring-red-500 hover:scale-95"
                       title="Eliminar actividad"
-                      onClick={() => handleEditDelete(activity.id, "delete")}
+                      onClick={() => handleDelete(activity.id)}
                     >
                       <TrashIcon className="size-6" />
                     </button>
